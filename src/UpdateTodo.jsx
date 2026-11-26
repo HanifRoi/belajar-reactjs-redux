@@ -11,7 +11,7 @@ export default function UpdateTodo(){
     const navigate = useNavigate();
 
     function handleClickUpdateTodo(){
-        dispatch(updateTodo({id: todo.id, name: todo.name}));
+        dispatch(updateTodo({id: todo.id, name: name}));
         navigate("/todolist")
     }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
+import { addTodo } from "./todoListSlice";
 
 export default function AddTodo(){
     const [name, setName] = useState("");
@@ -8,7 +9,7 @@ export default function AddTodo(){
     const navigate =  useNavigate();
 
     function handleClickAddTodo(){
-        dispatch(AddTodo({name: name}));
+        dispatch(addTodo({name: name}));
         navigate("/todolist");
     }
 

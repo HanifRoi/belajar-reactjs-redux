@@ -8,6 +8,9 @@ import { configureStore } from '@reduxjs/toolkit'
 import { counterSlice } from './CounterSlice.js'
 import Counter from './Counter.jsx'
 import { todoListSlice } from './todoListSlice.js'
+import ListTodo from './ListTodo.jsx'
+import AddTodo from './AddTodo.jsx'
+import UpdateTodo from './UpdateTodo.jsx'
 
 const store = configureStore({
   reducer: {
@@ -30,6 +33,9 @@ createRoot(document.getElementById('root')).render(
               <Counter/>
             </>
           }/>
+          <Route path='/todolist' element={<ListTodo/>}/>
+          <Route path='/todolist/add' element={<AddTodo/>}/>
+          <Route path='/todolist/:id/edit' element={<UpdateTodo/>}/>
         </Routes>
       </BrowserRouter>
     </Provider>

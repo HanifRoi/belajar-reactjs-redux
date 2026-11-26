@@ -26,7 +26,7 @@ export default function ListTodo(){
                             <td>
                                 <Link to={`/todolist/${todo.id}/edit`}>Edit</Link>
                                 <button onClick={() => {
-                                    dispatch(removeTodo({todo: todo.id}))
+                                    dispatch(removeTodo({id: todo.id}));
                                 }}>Delete</button>
                             </td>
                         </tr>
