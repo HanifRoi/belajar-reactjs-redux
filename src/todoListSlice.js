@@ -14,7 +14,7 @@ export const todoListSlice = createSlice({
             const {id} = action.payload;
             const index = state.findIndex(todo => todo.id === id);
             if (index !== -1){
-                state.splice(index, 1);
+                state.splice(index, 1); //menghapus sebanyak 1 data
             }
         },
         updateTodo: (state, action) => {
@@ -24,7 +24,15 @@ export const todoListSlice = createSlice({
                 todo.name = name;
             }
         }
+    },
+
+    selectors: {
+        getTodo: (state, id) => {
+            return state.find(todo => todo.id === id);
+
+        }
     }
 })
 
 export const {addTodo, removeTodo, updateTodo} = todoListSlice.actions
+export const {getTodo} = todoListSlice.selectors
