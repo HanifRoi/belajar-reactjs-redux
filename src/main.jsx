@@ -14,13 +14,20 @@ const store = configureStore({
   }//wajib ada reducer
 });
 
+
+//karena di simpan di store yang sama, jadi datanya sharing
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App/>}/>
-          <Route path='/counter' element={<Counter/>}/>
+          <Route path='/counter' element={
+            <>
+              <Counter/>
+              <Counter/>
+            </>
+          }/>
         </Routes>
       </BrowserRouter>
     </Provider>
