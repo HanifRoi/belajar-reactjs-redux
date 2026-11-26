@@ -7,10 +7,12 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import { configureStore } from '@reduxjs/toolkit'
 import { counterSlice } from './CounterSlice.js'
 import Counter from './Counter.jsx'
+import { todoListSlice } from './todoListSlice.js'
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer//registrasikan reducer
+    counter: counterSlice.reducer,//registrasikan reducer
+    todoList: todoListSlice.reducer
   }//wajib ada reducer
 });
 
